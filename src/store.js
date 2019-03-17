@@ -22,6 +22,7 @@ export default new Vuex.Store({
     getChallenges({ commit, dispatch }) {
       api.get('')
         .then(res => {
+          console.log(res.data.challenges)
           commit('setChallenges', res.data.challenges)
         })
     }
