@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/challenges">Challenges</router-link> |
-      <router-link to="/store">Store</router-link>
+      <router-link to="/store" @click="resetActiveItem">Store</router-link>
+      <button @click="resetActiveItem">Store</button>
     </div>
     <router-view />
   </div>
@@ -14,6 +15,12 @@
     mounted() {
       this.$store.dispatch('getChallenges')
       this.$store.dispatch('getStoreItems')
+    },
+    methods: {
+      resetActiveItem() {
+        this.$router.push({ name: 'store' })
+        this.$store.dispatch('setActiveItem')
+      }
     }
   }
 

@@ -22,12 +22,24 @@ export default new Router({
       }
     },
     {
-
       path: '/store',
       name: 'store',
       component: function () {
         return import(/* webpackChunkName: "about" */ './views/FNStore.vue')
       }
+    },
+    {
+      path: '/item/:id',
+      props: true,
+      name: 'item',
+      component: function () {
+        return import(/* webpackChunkName: "about" */ './views/Item.vue')
+      }
     }
+
+
+
+
+
   ]
 })

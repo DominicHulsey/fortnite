@@ -13,10 +13,15 @@ let storeApi = axios.create({
   baseURL: "https://fortnite-public-api.theapinetwork.com/prod09/store/get"
 })
 
+let itemApi = axios.create({
+  baseURL: "https://fortnite-public-api.theapinetwork.com/prod09/item"
+})
+
 export default new Vuex.Store({
   state: {
     challenges: [],
-    storeItems: []
+    storeItems: [],
+    activeItem: {}
   },
   mutations: {
     setChallenges(state, data) {
@@ -24,6 +29,9 @@ export default new Vuex.Store({
     },
     setStoreItems(state, data) {
       state.storeItems = data
+    },
+    setActiveItem(state, data) {
+      state.activeItem = data
     }
   },
   actions: {
@@ -41,6 +49,16 @@ export default new Vuex.Store({
           console.log(res.data.items)
           commit('setStoreItems', res.data.items)
         })
+    },
+
+    setActiveItem({ commit, dispatch }, itemId) {
+      if (!itemId) return commit('setActiveItem', {})
+      itemApi.get('get?ids=' + itemId)
+        .then(res => {
+          commit('setActiveItem', res.data)
+          console.log(res.data)
+        })
     }
+
   }
 })
