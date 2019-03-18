@@ -35,8 +35,7 @@
     name: "home",
     computed: {
       challenges() {
-        let challenges = this.$store.state.challenges;
-        return challenges;
+        return this.$store.state.challenges;
       }
     },
     components: {}

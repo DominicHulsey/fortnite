@@ -4,12 +4,15 @@
     <img src="@/assets/galaxy.png">
   </div>
 </template>
-<script>
-// @ is an alias to /src
 
-export default {
-  name: "home",
-  computed: {},
-  components: {}
-};
+
+
+<script>
+  // @ is an alias to /src
+
+  export default {
+    name: "home",
+    computed: {},
+    components: {}
+  };
 </script>

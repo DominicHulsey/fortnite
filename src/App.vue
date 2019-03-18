@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">Challenges</router-link>
+      <router-link to="/challenges">Challenges</router-link> |
+      <router-link to="/store">Store</router-link>
     </div>
     <router-view />
   </div>
@@ -12,6 +13,7 @@
   export default {
     mounted() {
       this.$store.dispatch('getChallenges')
+      this.$store.dispatch('getStoreItems')
     }
   }
 
