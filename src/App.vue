@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/challenges">Challenges</router-link> |
-      <router-link to="/store" @click="resetActiveItem">Store</router-link>
+      <router-link to="/store">Store</router-link>
       <button @click="resetActiveItem">Store</button>
     </div>
     <router-view />
