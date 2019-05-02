@@ -15,23 +15,23 @@
 </template>
 
 <script>
-export default {
-  name: "item",
-  mounted() {
-    if (!this.activeItem.itemid) {
-      this.$store.dispatch("setActiveItem", this.$route.params.id);
-    }
-  },
-  props: [],
-  data() {
-    return {};
-  },
-  computed: {
-    activeItem() {
-      return this.$store.state.activeItem;
-    }
-  },
-  methods: {},
-  components: {}
-};
+  export default {
+    name: "item",
+    mounted() {
+      if (!this.activeItem.itemid) {
+        this.$store.dispatch("setActiveItem", this.$route.params.id);
+      }
+    },
+    props: [],
+    data() {
+      return {};
+    },
+    computed: {
+      activeItem() {
+        return this.$store.state.activeItem;
+      }
+    },
+    methods: {},
+    components: {}
+  };
 </script>
