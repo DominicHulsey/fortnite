@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <img class="logo"
+      src="https://purepng.com/public/uploads/large/purepng.com-fortnite-logo-black-and-whitefortnitefortnite-battle-royalegameslogos-691522709171yxrho.png">
     <div id="nav">
       <button class="mx-1 route-btn" @click="goHome">Home</button>
       <button class="mx-1 route-btn" @click="goChallenges">Challenges</button>
@@ -77,5 +79,9 @@
 
   button:active {
     background-color: #fdf625;
+  }
+
+  .logo {
+    max-width: 30vw;
   }
 </style>
